@@ -1,0 +1,567 @@
+{
+  "criteria": [
+    {
+      "reference": "M1.0",
+      "statement": "The entity has defined and formally documented data and information privacy policies and procedures for PI collection, usage and processing that are consistent with the entity\u2019s objectives related to privacy.",
+      "gdpr_articles": [
+        "5",
+        "6",
+        "24",
+        "27",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ]
+    },
+    {
+      "reference": "M1.2",
+      "statement": "The entity has implemented a policy governance and accountability process that defines and formally documents policies and procedures for information privacy that are consistent with the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Responsibility and authority:",
+        "Established accountability:",
+        "Privacy awareness and training:",
+        "Qualifications of internal personnel:",
+        "Policy changes:",
+        "Oversight and monitoring:",
+        "Policy compliance:",
+        "Policy communications:",
+        "Consistency of commitments with privacy policies and procedures:"
+      ],
+      "gdpr_articles": [
+        "27 (1)",
+        "37 (1)",
+        "37 (2)",
+        "37 (3)",
+        "37 (4)",
+        "37 (6)",
+        "38 (1)",
+        "38 (2)",
+        "38 (3)",
+        "38 (5)",
+        "39 (1)",
+        "39 (2)",
+        "24 (2)",
+        "6 (4)",
+        "27 (1)",
+        "27 (2)",
+        "27 (3)",
+        "27 (4)",
+        "27 (5)",
+        "31"
+      ]
+    },
+    {
+      "reference": "M1.3",
+      "statement": "The entity has established policies and procedures for identifying, classifying and prioritizing the criticality of its collected PI. The entity also has procedures for evaluating potential vulnerabilities and the risk of unauthorized privacy information access, removal and destruction. The entity has designed and implemented control activities to help prevent, detect, address and notify relevant authorities in the event it detects and confirms instances of system and privacy information breaches. These policies and procedures were designed to help the entity meet its objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Data and information classification:",
+        "Privacy (risk) impact assessment:",
+        "Privacy incident response plan:",
+        "Ongoing and separate evaluations:"
+      ],
+      "gdpr_articles": [
+        "30 (1)",
+        "30 (2)",
+        "30 (3)",
+        "30 (4)",
+        "30 (5)",
+        "35 (1)",
+        "35 (2)",
+        "35 (3)",
+        "35 (4)",
+        "35 (5)",
+        "35 (7)",
+        "35 (8)",
+        "35 (10)",
+        "35 (11)",
+        "36 (1)",
+        "36 (2)",
+        "5 (1) (f)",
+        "33 (1)",
+        "33 (2)",
+        "33 (3)",
+        "33 (4)",
+        "34 (1)",
+        "34 (2)",
+        "34 (3)",
+        "34 (4)",
+        "32 (3)",
+        "40 (1)",
+        "40 (2)",
+        "40 (3)",
+        "40 (4)"
+      ]
+    },
+    {
+      "reference": "M1.4",
+      "statement": "The entity has a process for identifying, locating and classifying its PI. This process is clearly described as an essential aspect of its data governance program which is aligned with its information security controls. Relevant control activity policies and procedures have been designed and placed into operation to achieve the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Data privacy security controls:"
+      ],
+      "gdpr_articles": [
+        "32 (1)",
+        "32 (2)"
+      ]
+    },
+    {
+      "reference": "N2.1",
+      "statement": "The entity executes formal agreements, provides notices and formally communicates with data subjects about its privacy practices to meet its objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Agreements, notices and communications:",
+        "Ongoing notices and communications:",
+        "Entities and activities covered:",
+        "Clear and conspicuous:",
+        "Data subject revocations:"
+      ],
+      "gdpr_articles": [
+        "12 (1)",
+        "14 (1)",
+        "14 (2)",
+        "14 (3)",
+        "14 (4)",
+        "14 (5)",
+        "15 (1)",
+        "15 (2)",
+        "18 (3)",
+        "13 (2)",
+        "13 (3)",
+        "21 (4)"
+      ]
+    },
+    {
+      "reference": "N2.2",
+      "statement": "Changes to privacy agreements are communicated in formal notices to affected data subjects. The updated agreements are re-executed by data subjects to reflect the changes made to the entity\u2019s privacy practices. Data subjects are also notified, and the agreements are updated in situations where the originally intended purposes for collecting a data subject\u2019s PI need to be updated or changed. Such notifications and communications are consistent with the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Changes to privacy agreements/notices:"
+      ],
+      "gdpr_articles": [
+        "6 (4)"
+      ]
+    },
+    {
+      "reference": "C3.1",
+      "statement": "The entity communicates available options regarding the collection and creation of PI and the consequences of each choice, including the data subject\u2019s option to reject their agreed consent for the entity to initially or subsequently collect and create PI.",
+      "point_of_focus_headings": [
+        "Communicates to data subjects:",
+        "Ability to opt-out:",
+        "Communicates consequences of denying or withdrawing consent:",
+        "PI collection and creation:"
+      ],
+      "gdpr_articles": [
+        "8 (1)",
+        "8 (2)",
+        "21 (5)",
+        "5 (1)(b)",
+        "5 (1)(c)",
+        "9 (2)",
+        "9 (3)",
+        "10",
+        "11 (1)",
+        "25 (2)"
+      ]
+    },
+    {
+      "reference": "C3.2",
+      "statement": "The data subject\u2019s agreed consent is explicitly obtained and is only for the intended purpose of the information to meet the entity\u2019s objectives related to privacy. The entity\u2019s basis for determining implicit consent, when implicit consent is allowed as an available option, is documented.",
+      "point_of_focus_headings": [
+        "Documents and obtained consent for new purposes and uses:",
+        "Explicit and implicit consent:",
+        "Obtains explicit consent for sensitive information:",
+        "Obtains consent for data transfers:"
+      ],
+      "gdpr_articles": [
+        "6 (4)",
+        "7 (1)",
+        "7 (2)",
+        "7 (3)",
+        "7 (4)",
+        "49 (1)",
+        "49 (2)",
+        "49 (3)"
+      ]
+    },
+    {
+      "reference": "U4.1",
+      "statement": "The entity limits the use of PI to the purposes identified in its objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Only uses PI for intended purposes:"
+      ],
+      "gdpr_articles": [
+        "5 (1)(a)",
+        "5 (1)(b)",
+        "6 (1)",
+        "6 (4)",
+        "7 (3)",
+        "9 (1)",
+        "9 (2)",
+        "9 (3)",
+        "10",
+        "15 (4)",
+        "18 (1)",
+        "18 (2)",
+        "20 (4)",
+        "21 (1)",
+        "21 (2)",
+        "21 (3)",
+        "21 (6)",
+        "22 (1)",
+        "22 (2)",
+        "22 (3)",
+        "22 (4)",
+        "25 (2)",
+        "29",
+        "32 (4)",
+        "44",
+        "45 (1)",
+        "46 (1)",
+        "46 (2)",
+        "49 (1)",
+        "49 (2)",
+        "49 (3)"
+      ]
+    },
+    {
+      "reference": "U4.2",
+      "statement": "The entity retains PI consistent with its objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Retains PI:",
+        "Protects PI:"
+      ],
+      "gdpr_articles": [
+        "5 (1)(e)",
+        "11 (1)",
+        "17 (1)",
+        "5 (1)(f)",
+        "25 (2)",
+        "46 (1)",
+        "46 (2)",
+        "49 (1)",
+        "49 (2)",
+        "49 (3)"
+      ]
+    },
+    {
+      "reference": "U4.3",
+      "statement": "The entity securely disposes of PI consistent with its objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Captures, identifies and flags requests for deletion:",
+        "Disposes of, destroys and redacts PI:",
+        "Destroys PI:"
+      ],
+      "gdpr_articles": [
+        "17 (1)",
+        "17 (2)",
+        "17 (3)",
+        "25 (2)"
+      ]
+    },
+    {
+      "reference": "A5.1",
+      "statement": "The entity grants identified and authenticated data subjects the ability to access their stored PI for review and, upon request, provides physical or electronic copies of that information to data subjects to meet the entity\u2019s objectives related to privacy. If access is denied, data subjects are informed of the denial and reason for such denial, as required, to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Authenticates data subjects\u2019 identities:",
+        "Permits data subjects access to their PI:",
+        "Provides understandable PI within reasonable time:",
+        "Informs data subjects when access is denied:"
+      ],
+      "gdpr_articles": [
+        "11 (2)",
+        "12 (6)",
+        "15 (1)",
+        "15 (3)",
+        "20 (1)",
+        "20 (2)",
+        "20 (3)",
+        "20 (4)",
+        "12 (1)",
+        "12 (3)",
+        "12 (8)",
+        "12 (2)",
+        "12 (4)",
+        "12 (5)"
+      ]
+    },
+    {
+      "reference": "A5.2",
+      "statement": "The entity corrects, amends or appends PI based on information provided by data subjects and communicates such information to third parties, as committed or required, to meet the entity\u2019s objectives related to privacy. If a request for correction is denied, data subjects are informed of the denial and reason for such denial to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Communicates denial of access requests:",
+        "Permits data subjects to update or correct PI:",
+        "Communicates denial of correction requests:"
+      ],
+      "gdpr_articles": [
+        "16"
+      ]
+    },
+    {
+      "reference": "D6.1",
+      "statement": "The entity discloses PI to third parties with the explicit consent of data subjects, and such consent is obtained prior to disclosure to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Communicates privacy policies to third parties:",
+        "Discloses PI only when appropriate:",
+        "Discloses PI only to appropriate third parties:",
+        "Discloses information to third parties for new purposes and uses:"
+      ],
+      "gdpr_articles": [
+        "19",
+        "48"
+      ]
+    },
+    {
+      "reference": "D6.2",
+      "statement": "The entity creates and retains a complete, accurate and timely record of authorized disclosures of PI to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Creates and retains record of authorized disclosures:"
+      ],
+      "gdpr_articles": [
+        "19"
+      ]
+    },
+    {
+      "reference": "D6.3",
+      "statement": "The entity creates and retains a complete, accurate and timely record of detected or reported unauthorized disclosures (including breaches) of PI to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Creates and retains record of detected or reported unauthorized disclosures:"
+      ],
+      "gdpr_articles": [
+        "33 (5)"
+      ]
+    },
+    {
+      "reference": "D6.4",
+      "statement": "The entity obtains privacy commitments from vendors and other third parties who have access to PI to meet the entity\u2019s objectives related to privacy. The entity assesses those parties\u2019 compliance on a periodic and as-needed basis and takes corrective action, if necessary.",
+      "point_of_focus_headings": [
+        "Discloses PI only to appropriate third parties:"
+      ],
+      "gdpr_articles": [
+        "26 (1)",
+        "26 (2)",
+        "26 (3)",
+        "28 (1)",
+        "28 (2)",
+        "28 (3)",
+        "28 (4)",
+        "28 (5)",
+        "28 (6)",
+        "28 (7)",
+        "28 (8)",
+        "28 (9)",
+        "46 (1)",
+        "46 (2)",
+        "46 (3)",
+        "47 (2)",
+        "49 (1)",
+        "49 (2)",
+        "49 (3)"
+      ]
+    },
+    {
+      "reference": "D6.5",
+      "statement": "The entity obtains commitments from vendors and other third parties with access to PI to notify the entity in the event of actual or suspected unauthorized disclosures of PI. Such notifications are reported to appropriate personnel and acted on in accordance with established incident response procedures to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Remediates misuse of PI by third parties:",
+        "Reports actual or suspected unauthorized disclosures:"
+      ],
+      "gdpr_articles": [
+        "33 (2)"
+      ]
+    },
+    {
+      "reference": "D6.6",
+      "statement": "The entity provides notification of breaches and incidents to affected data subjects, regulators and others to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Remediates misuse of PI by third parties:",
+        "Provides notice of beaches and incidents:"
+      ],
+      "gdpr_articles": [
+        "12 (1)",
+        "33 (1)",
+        "33 (2)",
+        "33 (3)",
+        "33 (4)",
+        "34 (1)",
+        "34 (2)",
+        "34 (3)",
+        "34 (4)"
+      ]
+    },
+    {
+      "reference": "D6.7",
+      "statement": "The entity provides data subjects with an accounting of the PI held and disclosure of the data subjects\u2019 PI, upon the data subjects\u2019 request, to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Identifies types of PI and handling processes:",
+        "Captures, Identifies and Communicates Requests for Information:"
+      ],
+      "gdpr_articles": [
+        "15 (1)",
+        "12 (1)",
+        "12 (3)",
+        "19"
+      ]
+    },
+    {
+      "reference": "S7.1",
+      "statement": "The entity implements logical access security control software, infrastructures, authentication mechanisms and related architectures and security configuration controls over protected information assets to protect them from security incidents and events that might result in unauthorized access, alteration, destruction or disclosure of that information, and to meet the entity\u2019s privacy objectives.",
+      "point_of_focus_headings": [
+        "Identifies and manages the inventory of information assets:",
+        "Restricts logical and physical access to PI:",
+        "Identifies and authenticates users:",
+        "Considers network segmentation:",
+        "Manages points of access:",
+        "Restricts access to information assets:",
+        "Manages identification and authentication:",
+        "Manages credentials for infrastructure and software:",
+        "Uses encryption to protect data:",
+        "Protects encryption keys:",
+        "Uses antivirus and anti-malware software:"
+      ],
+      "gdpr_articles": [
+        "30 (1)",
+        "30 (2)",
+        "30 (3)",
+        "30 (4)",
+        "30 (5)",
+        "25 (1)",
+        "32 (1)",
+        "5 (1)(f)",
+        "32 (1)(a)"
+      ]
+    },
+    {
+      "reference": "S7.2",
+      "statement": "The entity restricts physical access to facilities and protected information assets (e.g., data center facilities, back-up media storage and other sensitive locations) to authorized personnel to meet the entity\u2019s objectives.",
+      "point_of_focus_headings": [
+        "Managing physical access:",
+        "Removes physical access:",
+        "Ongoing physical access monitoring:",
+        "Internal physical access control:",
+        "Physical protection of information on storage media:",
+        "Identifies environmental threats:"
+      ],
+      "gdpr_articles": [
+        "5 (1)(f)",
+        "32 (1)(b)"
+      ]
+    },
+    {
+      "reference": "S7.3",
+      "statement": "The entity restricts the transmission, movement and removal of information to authorized internal and external users and processes, and protects it during transmission, movement or removal to meet the entity\u2019s objectives.",
+      "point_of_focus_headings": [
+        "Restricts the ability to perform transmission:",
+        "Uses encryption technologies or secure communication channels to protect data:",
+        "Protects end point and mobile devices:",
+        "Protects removable media:"
+      ],
+      "gdpr_articles": [
+        "45 (1)",
+        "46 (1)",
+        "5 (1)(f)"
+      ]
+    },
+    {
+      "reference": "S7.4",
+      "statement": "The entity protects PI, in all forms, against accidental disclosure due to natural disasters and environmental hazards.",
+      "point_of_focus_headings": [
+        "Continuity of physical and environmental protections:"
+      ],
+      "gdpr_articles": [
+        "32 (2)"
+      ]
+    },
+    {
+      "reference": "S7.5",
+      "statement": "The entity tests the effectiveness of the key administrative, technical and physical safeguards protecting personal data, periodically and as required by entity policy, or by relevant, applicable laws or regulations.",
+      "point_of_focus_headings": [
+        "Considers different types of ongoing and separate evaluations:"
+      ],
+      "gdpr_articles": [
+        "24 (1)",
+        "24 (3)",
+        "25 (3)",
+        "32 (1)(d)",
+        "32 (3)",
+        "35 (8)"
+      ]
+    },
+    {
+      "reference": "Q8.1",
+      "statement": "The entity collects and maintains accurate, reliable, up to date, complete and relevant PI to meet the entity\u2019s objectives related to privacy.",
+      "point_of_focus_headings": [
+        "Communicates to data subjects:",
+        "Ensures accuracy and completeness of PI:",
+        "Ensures relevance of PI:",
+        "Implements incident management and recovery testing:",
+        "Implements business continuity plan testing:",
+        "Testing confidentiality, completeness, integrity and availability of systems and back-up data:"
+      ],
+      "gdpr_articles": [
+        "5",
+        "5 (1)(d)",
+        "32 (1)(c)",
+        "32 (1)(b)"
+      ]
+    },
+    {
+      "reference": "M9.1",
+      "statement": "The entity implements a process for receiving, addressing, resolving and communicating the resolution of inquiries, complaints and disputes from data subjects and others and periodically monitors compliance to meet the entity\u2019s objectives related to privacy. Corrections and other necessary actions related to identified deficiencies are made or taken in a timely basis.",
+      "point_of_focus_headings": [
+        "Communicates to data subjects:",
+        "Addresses inquiries, complaints and disputes:",
+        "Documents and communicates dispute resolution and recourse:",
+        "Documents and reports compliance review results:",
+        "Documents and reports instances of noncompliance:",
+        "Performs ongoing monitoring:"
+      ],
+      "gdpr_articles": [
+        "38 (4)",
+        "22 (3)",
+        "5 (2)",
+        "24 (1)",
+        "24 (3)",
+        "25 (3)",
+        "32 (3)",
+        "35 (8)",
+        "35 (11)"
+      ]
+    }
+  ],
+  "glossary_terms": [
+    "Affiliate",
+    "Agreement",
+    "Anonymize",
+    "California Consumer Privacy Act (CCPA)",
+    "Confidentiality",
+    "Consent",
+    "Controller",
+    "Cookies",
+    "Data subject",
+    "Encryption",
+    "Entity",
+    "General Data Protection Regulation (GDPR)",
+    "Health Insurance Portability and Accountability Act (HIPAA)",
+    "Individual",
+    "Internal (entity) personnel",
+    "Opting in",
+    "Outsourcing",
+    "Personal information (PI)",
+    "PI lifecycle",
+    "Policy",
+    "Processor",
+    "Privacy",
+    "Privacy breach",
+    "Privacy program",
+    "Purpose",
+    "Redact",
+    "Revocation",
+    "Sensitive PI",
+    "Third party"
+  ]
+}
