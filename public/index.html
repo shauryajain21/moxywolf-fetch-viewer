@@ -9,15 +9,13 @@
     body {
       font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      padding: 2rem;
-      max-width: 70rem;
-      margin-inline: auto;
+      padding: 1.25rem 1.5rem 2rem;
       background: Canvas;
       color: CanvasText;
     }
     h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
-    .sub { opacity: .7; font-size: .85rem; margin-bottom: 1.25rem; }
-    .bar { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+    .sub { opacity: .7; font-size: .85rem; margin-bottom: 1rem; }
+    .bar { display: flex; gap: .5rem; margin-bottom: .75rem; flex-wrap: wrap; align-items: center; }
     button, input[type="submit"] {
       font: inherit;
       padding: .35rem .8rem;
@@ -36,18 +34,12 @@
     .count { opacity: .55; font-size: .8rem; margin-left: .4rem; }
     .guid { opacity: .92; }
     .node { border-left: 1px solid rgba(128,128,128,.3); margin-left: .55rem; padding-left: .85rem; }
-    .leaf { padding: .2rem 0; }
-    .warn {
-      border: 1px solid #d29922;
-      border-radius: .5rem;
-      padding: .6rem .9rem;
-      margin-bottom: 1.25rem;
-      font-size: .87rem;
-    }
+    .leaf { padding: .2rem 0; cursor: pointer; border-radius: .25rem; }
+    .leaf:hover, .leaf.active, summary.active { background: rgba(31,111,235,.1); }
     form.panel {
       display: grid;
       gap: .55rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       padding: .9rem 1rem;
       border: 1px solid rgba(128,128,128,.3);
       border-radius: .5rem;
@@ -63,11 +55,34 @@
     }
     .err { color: #c0392b; font-size: .87rem; }
     .hint { opacity: .65; font-size: .8rem; }
+    .legend { display: flex; gap: .9rem; flex-wrap: wrap; font-size: .8rem; opacity: .85; margin-bottom: 1rem; }
+    .swatch { display: inline-block; width: .7rem; height: .7rem; border-radius: .15rem; margin-right: .3rem; vertical-align: -1px; }
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 24rem);
+      gap: 1.25rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) { .workspace { grid-template-columns: 1fr; } }
+    .pdf-pane { position: sticky; top: .5rem; }
+    .pdf-stage { position: relative; border: 1px solid rgba(128,128,128,.3); border-radius: .4rem; overflow: hidden; background: #fff; }
+    #pdf-canvas { display: block; width: 100%; height: auto; }
+    #pdf-overlay { position: absolute; inset: 0; }
+    .box {
+      position: absolute;
+      border: 1.5px solid;
+      border-radius: 2px;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .box.selected { border-width: 2.5px; outline: 2px solid rgba(0,0,0,.25); }
+    .tree-pane { min-width: 0; }
+    label.inline { display: flex; align-items: center; gap: .4rem; font-size: .85rem; }
   </style>
 </head>
 <body>
   <h1 id="t">Fetch tag viewer</h1>
-  <div class="sub" id="s">Paste a public PDF URL. Fetch returns tagged JSON. This page draws the same collapsible tree as the HTML Dorian sent.</div>
+  <div class="sub" id="s">PDF on the left. Fetch tags as boxes. Click a box or a tree row to jump.</div>
 
   <form class="panel" id="form">
     <label>PDF URL
@@ -80,16 +95,39 @@
       <button type="submit" id="go">Fetch and render</button>
       <button type="button" id="sample">Load last sample</button>
     </div>
-    <div class="hint">Key is sent to this local server, then to api.linkup.so. Nothing is written to disk.</div>
+    <div class="hint">Boxes are text matches on the PDF, not layout boxes from Fetch. Key stays in this browser.</div>
     <div class="err" id="err"></div>
   </form>
 
-  <div id="w"></div>
-  <div class="bar">
-    <button type="button" id="ex">Expand all</button>
-    <button type="button" id="co">Collapse all</button>
+  <div class="legend">
+    <span><i class="swatch" style="background:#1f6feb"></i>id</span>
+    <span><i class="swatch" style="background:#2da44e"></i>statement</span>
+    <span><i class="swatch" style="background:#d29922"></i>heading</span>
+    <span><i class="swatch" style="background:#8250df"></i>GDPR</span>
   </div>
-  <div id="root"></div>
-  <script src="/app.js"></script>
+
+  <div class="workspace">
+    <div class="pdf-pane">
+      <div class="bar">
+        <button type="button" id="prev-page">Prev</button>
+        <span id="page-label">–</span>
+        <button type="button" id="next-page">Next</button>
+        <label class="inline"><input type="checkbox" id="toggle-boxes" checked> Show all boxes</label>
+      </div>
+      <div class="pdf-stage" id="pdf-stage">
+        <canvas id="pdf-canvas"></canvas>
+        <div id="pdf-overlay"></div>
+      </div>
+    </div>
+    <div class="tree-pane">
+      <div class="bar">
+        <button type="button" id="ex">Expand all</button>
+        <button type="button" id="co">Collapse all</button>
+      </div>
+      <div id="w"></div>
+      <div id="root"></div>
+    </div>
+  </div>
+  <script type="module" src="/app.js"></script>
 </body>
 </html>

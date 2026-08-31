@@ -1,3 +1,5 @@
+import { bindPager, loadPdf, selectTag, setOverlayHandler } from "./overlay.js";
+
 const titleEl = document.getElementById("t");
 const subEl = document.getElementById("s");
 const root = document.getElementById("root");
@@ -17,6 +19,8 @@ const COMPONENT_TITLES = {
   M9: "Monitoring and enforcement",
 };
 
+const DEFAULT_PDF = document.getElementById("url").value;
+
 function componentId(reference) {
   const m = String(reference || "").match(/^([A-Z]\d+)/);
   return m ? m[1] : "Other";
@@ -29,19 +33,37 @@ function el(tag, className, text) {
   return node;
 }
 
-function leaf(into, ref, guidance) {
+function markActive(id) {
+  root.querySelectorAll(".active").forEach((n) => n.classList.remove("active"));
+  const hit = root.querySelector(`[data-tag="${CSS.escape(id)}"]`);
+  if (hit) hit.classList.add("active");
+}
+
+function bindJump(node, id) {
+  if (!id) return;
+  node.dataset.tag = id;
+  node.addEventListener("click", (event) => {
+    event.stopPropagation();
+    markActive(id);
+    selectTag(id);
+  });
+}
+
+function leaf(into, ref, guidance, tagId) {
   const div = el("div", "leaf");
   div.append(el("span", "ref", ref), el("span", "guid", guidance ? ` ${guidance}` : ""));
+  bindJump(div, tagId);
   into.appendChild(div);
 }
 
-function branch(into, ref, guidance, count, open = false) {
+function branch(into, ref, guidance, count, open = false, tagId = "") {
   const det = el("details");
   det.open = open;
   const sum = el("summary");
   sum.append(el("span", "ref", ref));
   if (guidance) sum.append(el("span", "guid", ` ${guidance}`));
   if (count != null) sum.append(el("span", "count", `(${count})`));
+  bindJump(sum, tagId);
   det.appendChild(sum);
   const node = el("div", "node");
   det.appendChild(node);
@@ -63,22 +85,30 @@ function renderTree(data) {
 
   titleEl.textContent = data.document_title || "privacy-management-framework";
   document.title = titleEl.textContent;
-  subEl.textContent = `${criteria.length} criteria · ${glossary.length} glossary terms · from /fetch`;
 
   for (const [id, items] of groups) {
     const node = branch(root, id, COMPONENT_TITLES[id] || "", items.length, true);
     for (const c of items) {
-      const kids = [];
-      if (c.statement) kids.push(["statement", c.statement]);
-      for (const h of c.point_of_focus_headings || []) kids.push(["heading", h]);
-      if (c.gdpr_articles?.length) kids.push(["gdpr", c.gdpr_articles.join(", ")]);
-      const child = branch(node, c.reference, c.title || "", kids.length);
-      for (const [kind, text] of kids) leaf(child, kind === "gdpr" ? "GDPR" : c.reference, text);
+      const child = branch(
+        node,
+        c.reference,
+        c.title || "",
+        (c.point_of_focus_headings || []).length + (c.statement ? 1 : 0),
+        false,
+        `${c.reference}:ref`,
+      );
+      if (c.statement) leaf(child, c.reference, c.statement, `${c.reference}:statement`);
+      for (const h of c.point_of_focus_headings || []) {
+        leaf(child, c.reference, h, `${c.reference}:heading:${h}`);
+      }
+      if (c.gdpr_articles?.length) {
+        leaf(child, "GDPR", c.gdpr_articles.join(", "), `${c.reference}:ref`);
+      }
     }
   }
 
   if (glossary.length) {
-    const node = branch(root, "Glossary", "", glossary.length, true);
+    const node = branch(root, "Glossary", "", glossary.length, false);
     for (const term of glossary) leaf(node, term, "");
   }
 }
@@ -86,6 +116,16 @@ function renderTree(data) {
 function showError(msg) {
   errEl.textContent = msg || "";
 }
+
+async function showDocument(data, pdfUrl) {
+  renderTree(data);
+  subEl.textContent = "Loading PDF and lining up boxes…";
+  const info = await loadPdf(pdfUrl, data);
+  subEl.textContent = `${data.criteria?.length || 0} criteria · ${info.boxes} boxes · ${info.pages} pages`;
+}
+
+setOverlayHandler(markActive);
+bindPager();
 
 document.getElementById("form").addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -110,7 +150,7 @@ document.getElementById("form").addEventListener("submit", async (event) => {
       throw new Error(typeof msg === "string" ? msg : JSON.stringify(msg));
     }
     if (!body.data) throw new Error("Fetch returned no data.");
-    renderTree(body.data);
+    await showDocument(body.data, url);
   } catch (err) {
     showError(err.message);
   } finally {
@@ -122,7 +162,7 @@ document.getElementById("form").addEventListener("submit", async (event) => {
 document.getElementById("sample").addEventListener("click", async () => {
   showError("");
   const res = await fetch("/sample.json");
-  renderTree(await res.json());
+  await showDocument(await res.json(), document.getElementById("url").value || DEFAULT_PDF);
 });
 
 document.getElementById("ex").onclick = () =>
@@ -132,5 +172,5 @@ document.getElementById("co").onclick = () =>
 
 fetch("/sample.json")
   .then((r) => r.json())
-  .then(renderTree)
-  .catch(() => {});
+  .then((data) => showDocument(data, DEFAULT_PDF))
+  .catch((err) => showError(err.message));

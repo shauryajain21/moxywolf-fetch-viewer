@@ -66,6 +66,21 @@ function serveStatic(req, res) {
   });
 }
 
+async function proxyPdf(req, res) {
+  const target = new URL(req.url, "http://127.0.0.1").searchParams.get("url");
+  if (!target || !/^https:\/\//i.test(target)) {
+    return send(res, 400, JSON.stringify({ error: "https url required" }), {
+      "content-type": "application/json",
+    });
+  }
+  const upstream = await fetch(target);
+  const bytes = Buffer.from(await upstream.arrayBuffer());
+  send(res, upstream.status, bytes, {
+    "content-type": upstream.headers.get("content-type") || "application/pdf",
+    "cache-control": "private, max-age=3600",
+  });
+}
+
 async function proxyFetch(req, res) {
   const chunks = [];
   for await (const chunk of req) chunks.push(chunk);
@@ -104,6 +119,14 @@ async function proxyFetch(req, res) {
 }
 
 const server = http.createServer((req, res) => {
+  if (req.method === "GET" && req.url.startsWith("/api/pdf")) {
+    proxyPdf(req, res).catch((err) => {
+      send(res, 502, JSON.stringify({ error: String(err) }), {
+        "content-type": "application/json",
+      });
+    });
+    return;
+  }
   if (req.method === "POST" && req.url === "/api/fetch") {
     proxyFetch(req, res).catch((err) => {
       send(res, 502, JSON.stringify({ error: String(err) }), {
